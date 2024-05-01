@@ -1,0 +1,245 @@
+@import url("https://fonts.cdnfonts.com/css/graphik-trial");
+@import url("https://fonts.cdnfonts.com/css/forma-djr-banner");
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  cursor: none;
+}
+
+#main_wrapper {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+#main_wrapper #story_wrapper {
+  /* position: absolute;
+  top:-1000px; */
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  background: white;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+#main_wrapper #story_wrapper h2 {
+  text-align: center;
+  font-size: 18vw;
+  font-family: "Forma DJR Display", sans-serif;
+}
+#main_wrapper #story_wrapper p {
+  color: gray;
+  padding: 4vw 10vw;
+  font-size: 1.4vw;
+  font-family: "Graphik Trial", Courier;
+}
+#main_wrapper #story_team {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 5vw;
+  height: 100%;
+  width: 100vw;
+  max-width: 100vw;
+  font-size: 5vw;
+  min-height: 100vh;
+  white-space: nowrap;
+  cursor: default;
+  color: black;
+  font-family: "Forma DJR Display", sans-serif;
+}
+#main_wrapper #story_team h2 {
+  padding-left: 5vw;
+}
+#main_wrapper #story_team p {
+  font-size: 1.4vw;
+  white-space: normal;
+  color: grey;
+  font-family: "Graphik Trial", Courier;
+}
+
+#features_others {
+  display: grid;
+  grid-template-columns: 2vw 1fr 1fr 1fr 2vw;
+  grid-template-rows: 1fr;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  height: 70vh;
+  width: 100vw;
+  max-width: 100vw !important;
+}
+#features_others .features_pages {
+  position: relative;
+  box-sizing: border-box;
+  border: solid 2px black;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: white;
+  transition: all 0.6s ease;
+}
+#features_others .features_pages .features_img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  pointer-events: none;
+  background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+  scale: 1;
+  transition: all 0.6s ease;
+}
+#features_others .features_pages #feature1_img {
+  background-image: url(media/viswag_pic.jpeg);
+}
+#features_others .features_pages #feature2_img {
+  background-image: url(media/gowtham_pic.jpeg);
+}
+#features_others .features_pages #feature3_img {
+  background-image: url(media/shivamani_pic.jpeg);
+}
+#features_others .features_pages .feature_heading_div {
+  font-family: "PT Mono", monospace;
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  border: solid 2px black;
+  color: black;
+  height: 6vw;
+  width: 100%;
+  font-size: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(300deg, white, white);
+  pointer-events: none;
+  transition: all 0.6s ease;
+  z-index: 15;
+}
+#features_others .features_pages .feature_heading_div h3, #features_others .features_pages .feature_heading_div p {
+  margin: 2px 10px;
+}
+#features_others .features_pages .feature_para_div {
+  font-family: "Graphik Trial", courier;
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  overflow: hidden;
+  height: 0;
+  width: 100%;
+  font-size: 2vw;
+  pointer-events: none;
+  transition: all 0.6s ease;
+  background: linear-gradient(300deg, deepskyblue, #fefefe);
+  background-size: 120% 120%;
+  animation: gradient-animation 2s ease infinite;
+  z-index: 10;
+}
+#features_others .features_pages .feature_para_div p {
+  padding: 2vw;
+}
+#features_others #end_span {
+  width: 60vw;
+  min-height: 60vh;
+  background-color: white;
+  color: grey;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10vw;
+  font-size: 2vw;
+  font-family: "Forma DJR Display", sans-serif;
+}
+
+#nav_wrapper {
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 1fr 1fr 0.6fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 50;
+}
+#nav_wrapper a {
+  color: black;
+  text-decoration: none;
+}
+#nav_wrapper a div {
+  font-family: "Forma DJR Display", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: solid 2px black;
+  height: 60px;
+  background: white;
+  transition: all 0.6s ease;
+}
+#nav_wrapper a #logo_nav {
+  background-color: black;
+}
+#nav_wrapper a #logo_nav img {
+  width: 20%;
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+#nav_wrapper a :where(#features_nav, #vision_nav, #logo_nav, #vision_nav, #connect_nav):hover {
+  background: linear-gradient(300deg, deepskyblue, #fefefe);
+  background-size: 120% 120%;
+  animation: gradient-animation 2s ease infinite;
+  font-size: larger;
+}
+#nav_wrapper a #story_nav {
+  background: linear-gradient(300deg, deepskyblue, #fefefe) !important;
+  background-size: 120% 120%;
+  animation: gradient-animation 2s ease infinite;
+}
+
+@media only screen and (max-width: 600px) {
+  #story_wrapper {
+    justify-content: center;
+  }
+  #story_wrapper h2 {
+    font-size: 25vw !important;
+  }
+  #story_wrapper p {
+    font-size: 4vw !important;
+  }
+  #story_team h2 {
+    font-size: 20vw !important;
+  }
+  #features_others {
+    height: 200vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2vw 1fr 1fr 1fr 10vh;
+  }
+  #features_others .features_pages .feature_heading_div {
+    height: 21vw !important;
+    font-size: 8vw !important;
+  }
+  #features_others .features_pages .feature_heading_div p {
+    font-size: 6vw !important;
+  }
+  #features_others .features_pages .feature_para_div p {
+    font-size: 6vw !important;
+  }
+  #feature_3 {
+    padding-bottom: 50vh !important;
+  }
+}/*# sourceMappingURL=story.css.map */

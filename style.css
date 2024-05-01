@@ -1,0 +1,299 @@
+* {
+  padding: 0;
+  margin: 0;
+  cursor: none;
+}
+
+#main_page {
+  height: 100vh;
+  max-height: 100vh;
+  max-width: 100vw;
+  width: 100vw;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 42px 1fr 42px;
+  grid-template-columns: 42px 1fr 42px;
+  grid-template-areas: "top_bar top_bar top_bar" "left_bar main_box right_bar" "bottom_bar bottom_bar right_bar";
+  /*
+  #mainbox:has(#box_toplft:hover) {
+      grid-template-areas: 
+      'box1 box1 box1 box1 box2'
+      'box1 box1 box1 box1 box2'
+      'box4 box4 box4 box3 box2'
+      'box4 box4 box4 box5 box5'
+      'box4 box4 box4 box5 box5'
+      ;
+    } */
+}
+#main_page .top_btm_txt_bars {
+  color: black;
+  background-color: white;
+  border: solid 2px black;
+  height: 42px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  pointer-events: none;
+  font-family: "PT Mono", monospace;
+}
+@keyframes RightToLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-30%);
+  }
+}
+@keyframes LeftToRight {
+  from {
+    transform: translateX(-30%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes TopToBottom {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(30%);
+  }
+}
+@keyframes BottomToTop {
+  from {
+    transform: translateY(10%);
+  }
+  to {
+    transform: translateY(-45%);
+  }
+}
+#main_page .lft_rgt_txt_bars {
+  color: black;
+  border: solid 2px black;
+  border-top: none;
+  border-bottom: none;
+  width: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  height: calc(100vh - 78px);
+  font-family: "PT Mono", monospace;
+}
+#main_page #topbar {
+  grid-area: top_bar;
+  z-index: 15;
+  border-bottom: solid 2px black;
+}
+#main_page #topbar #top_bar_div {
+  display: flex;
+  gap: 150px;
+  white-space: nowrap;
+  animation: RightToLeft 17s infinite linear;
+}
+#main_page #topbar #top_bar_div p {
+  font-size: 26px;
+}
+#main_page #leftbar {
+  grid-area: left_bar;
+  z-index: 0;
+}
+#main_page #leftbar #left_bar_div {
+  display: flex;
+  height: 3500px;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 1350px;
+  white-space: nowrap;
+  animation: TopToBottom 20s infinite linear;
+}
+#main_page #leftbar #left_bar_div p {
+  transform: rotate(-90deg);
+  font-size: 26px;
+}
+#main_page :where(#box_toplft, #box_toprgt, #box_btmlft, #box_btmrgt):hover {
+  background: linear-gradient(300deg, deepskyblue, #fefefe);
+  background-size: 120% 120%;
+  animation: gradient-animation 2s ease infinite;
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+#main_page #mainbox {
+  grid-area: main_box;
+  display: flex;
+  position: relative;
+  background-color: rgb(211, 255, 255);
+  font-family: "Forma DJR Display", sans-serif;
+}
+#main_page #mainbox .main_boxes {
+  background-color: white;
+  box-sizing: border-box;
+  border: solid 2px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s ease;
+}
+#main_page #mainbox .main_boxes .box_h3 {
+  font-size: 40px;
+  pointer-events: none;
+}
+#main_page #mainbox #box_toplft {
+  width: 60%;
+  height: 40%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  right: auto;
+  bottom: auto;
+}
+#main_page #mainbox #box_toprgt {
+  width: 40%;
+  height: 60%;
+  position: absolute;
+  right: 0%;
+  top: 0%;
+}
+#main_page #mainbox #box_center {
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  z-index: 10;
+  overflow: hidden;
+  background-color: black;
+}
+@keyframes rotate3d {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+#main_page #mainbox #box_center #sliyp_div {
+  pointer-events: none;
+}
+#main_page #mainbox #box_center #sliyp_div img {
+  transition: all 0.6s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#main_page #mainbox #box_center #sliyp_div #logo_img {
+  width: 50%;
+}
+#main_page #mainbox #box_center #sliyp_div #logo_png {
+  width: 20%;
+  left: 39%;
+  top: 28%;
+  animation: rotate3d 1s ease-in-out infinite;
+  z-index: -5;
+}
+#main_page #mainbox #box_center #sliyp_div #inside_logotxt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 150px;
+  color: rgba(255, 255, 0, 0);
+  stroke-width: 2px;
+  -webkit-text-stroke-color: cyan;
+  -webkit-text-stroke-width: 2px;
+  z-index: -10;
+  opacity: 20%;
+}
+#main_page #mainbox #box_btmlft {
+  width: 40%;
+  height: 60%;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+}
+#main_page #mainbox #box_btmrgt {
+  width: 60%;
+  height: 40%;
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+}
+#main_page #rightbar {
+  grid-area: right_bar;
+  z-index: 10;
+}
+#main_page #rightbar #right_bar_div {
+  display: flex;
+  height: 3500px;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 1250px !important;
+  white-space: nowrap;
+  animation: BottomToTop 25s infinite linear;
+}
+#main_page #rightbar #right_bar_div p {
+  font-size: 26px;
+  transform: rotate(90deg);
+}
+#main_page #bottombar {
+  grid-area: bottom_bar;
+  z-index: 5;
+}
+#main_page #bottombar #btm_bar_div {
+  display: flex;
+  gap: 150px;
+  white-space: nowrap;
+  animation: LeftToRight 20s infinite linear;
+}
+#main_page #bottombar #btm_bar_div p {
+  font-size: 24px;
+}
+
+main_page::-moz-selection {
+  background: cyan;
+}
+
+main_page::selection {
+  background: cyan;
+}
+
+a {
+  color: black;
+}
+
+a:active {
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  #mainbox {
+    display: grid !important;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  #box_toplft, #box_toprgt, #box_center, #box_btmlft, #box_btmrgt {
+    width: 100% !important;
+    height: calc((100vh - 84px) / 5) !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+  }
+  #box_center, #box_btmlft {
+    position: relative !important;
+  }
+  a {
+    text-decoration: none !important;
+  }
+}/*# sourceMappingURL=style.css.map */
