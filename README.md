@@ -2,12 +2,12 @@
 
 <img alt="Sliyp Website" src=".github/banner.svg" width="100%">
 
-SCSS
+SliYp marketing site built without a framework: SCSS and vanilla JavaScript, organised by section into story, features, vision and connect pages.
 
 <br>
 
 
-[![live](https://img.shields.io/badge/live-sliyp--website.vercel.app-6B7280?style=flat-square&labelColor=111827)](https://sliyp-website.vercel.app) ![language](https://img.shields.io/badge/language-1729-374151?style=flat-square&labelColor=111827) ![updated](https://img.shields.io/badge/updated-false-1F2937?style=flat-square&labelColor=111827)
+[![live](https://img.shields.io/badge/live-sliyp--website.vercel.app-6B7280?style=flat-square&labelColor=111827)](https://sliyp-website.vercel.app) ![language](https://img.shields.io/badge/language-SCSS-374151?style=flat-square&labelColor=111827) ![updated](https://img.shields.io/badge/updated-2026--11--04-1F2937?style=flat-square&labelColor=111827)
 
 </div>
 
@@ -15,7 +15,7 @@ SCSS
 
 ## What this is
 
-SCSS
+The SliYp marketing site in its fuller form: SCSS and vanilla JavaScript with a directory per section — `story`, `features`, `vision`, `connect` — and a `media` folder for assets. No build step or framework.
 
 <div align="center">
 
